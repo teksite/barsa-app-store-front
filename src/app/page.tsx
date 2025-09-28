@@ -1,4 +1,5 @@
 import Image from "next/image";
+import {fetchApi} from "@/libs";
 
 export default function Home() {
   return (
