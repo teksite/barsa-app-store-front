@@ -12,7 +12,7 @@ export default async function SingleProductPage({params}: { params: { slug: stri
     const {slug} = await params;
     const product: ProductType = await fetchApi(`http://app-store.test/api/v1/products/${slug}`);
     if (!product) return notFound();
-    console.log(product)
+
     return (
         <>
             <Hero product={product}/>
