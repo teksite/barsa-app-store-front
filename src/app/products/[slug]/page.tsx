@@ -5,6 +5,8 @@ import {notFound} from "next/navigation";
 import {DownloadCatalog} from "@/app/products/[slug]/components/download-catalog";
 import {Requirement} from "@/app/products/[slug]/components/requirement";
 import {Owner} from "@/app/products/[slug]/components/owner";
+import {LastVersion} from "@/app/products/[slug]/components/last-version";
+import {Demo} from "@/app/products/[slug]/components/demo";
 
 export default async function SingleProductPage({params}: { params: { slug: string } }) {
     const {slug} = await params;
@@ -35,7 +37,8 @@ export default async function SingleProductPage({params}: { params: { slug: stri
                         <div className="sticky top-6 space-y-6">
 
                             <Owner owner={product.owner} />
-                            <Owner owner={product.owner} />
+                            <LastVersion version={product.last_version} />
+                            <Demo title={product.title}/>
                         </div>
                     </aside>
                 </div>

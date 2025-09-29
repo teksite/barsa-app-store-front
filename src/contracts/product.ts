@@ -12,6 +12,7 @@ export interface ProductType {
     recommend_type:1|2|3,
     owner:OwnerType,
     properties:PropertiesType
+    last_version?:VersionType
 }
 
 export interface OwnerType {
@@ -40,3 +41,12 @@ export interface GroupedPropertiesType {
 export type PropertiesType = {
     [key: string]: string[] | GroupedPropertiesType[];
 };
+
+export interface VersionType {
+    id: number;
+    title: string;
+    changes?:string;
+    published_at?:string;
+    release_type:1|2;
+}
+
