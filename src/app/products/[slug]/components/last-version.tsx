@@ -3,7 +3,7 @@ import {VersionType} from "@/contracts/product";
 import Link from "next/link";
 import {Box} from "@/app/components/Box";
 
-export function LastVersion({version}: { version?: VersionType }) {
+export function LastVersion({version, link}: { version?: VersionType, link?: string }) {
     if (!version) return null;
 
     return (
@@ -30,6 +30,12 @@ export function LastVersion({version}: { version?: VersionType }) {
                     </span>
                 </li>
             </ul>
+            {link && <div className={'text-center'}>
+                <Link href={link} className='text-center mt-6 link'>
+                    مشاهده همه نگارش‌ها
+                </Link>
+            </div>
+            }
 
 
         </Box>

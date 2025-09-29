@@ -37,7 +37,7 @@ export default async function SingleProductPage({params}: { params: { slug: stri
                         <div className="sticky top-6 space-y-6">
 
                             <Owner owner={product.owner} />
-                            <LastVersion version={product.last_version} />
+                            <LastVersion version={product.last_version} link={`/products/${slug}/versions`} />
                             <Demo title={product.title}/>
                         </div>
                     </aside>

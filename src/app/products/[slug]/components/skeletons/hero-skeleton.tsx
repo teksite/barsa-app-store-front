@@ -1,6 +1,6 @@
 import {shimmer} from "@/shared/common-css";
-import {HeroPropertiesSkeleton} from "@/app/products/[slug]/skeletons/hero-properties-skeleton";
-import {HeroRecommendationSkeleton} from "@/app/products/[slug]/skeletons/hero-recommendation-skeleton";
+import {HeroPropertiesSkeleton} from "@/app/products/[slug]/components/skeletons/hero-properties-skeleton";
+import {HeroRecommendationSkeleton} from "@/app/products/[slug]/components/skeletons/hero-recommendation-skeleton";
 
 export function HeroSkeleton() {
     return (
