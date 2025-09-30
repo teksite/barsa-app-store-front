@@ -9,9 +9,9 @@ import {IconPicker} from "@/app/components/icon";
 
 export default async function VersionsPage({params}: { params: { slug: string } }) {
     const {slug} = await params;
-    const product: ProductType = await fetchApi(`http://app-store.test/api/v1/products/${slug}`);
+    const {data:product}:{data: ProductType} = await fetchApi(`http://app-store.test/api/v1/products/${slug}`);
     if (!product) return notFound();
-    const versions: VersionType[] = await fetchApi(`http://app-store.test/api/v1/products/${slug}/versions?page=1`);
+    const {data:versions}:{data: VersionType[]} = await fetchApi(`http://app-store.test/api/v1/products/${slug}/versions?page=1`);
 
     return (
         <>

@@ -1,9 +1,9 @@
 // Icon.tsx
 
-import {IconName , iconsList} from "@/app/components/iconList";
+import {IconName, iconsList} from "@/app/components/iconList";
 
 type IconProps = {
-    icon: IconName;
+    icon: string;
     size?: number | string;
     width?: number | string;
     height?: number | string;
@@ -13,16 +13,16 @@ type IconProps = {
     y?: number;
 } & React.SVGProps<SVGSVGElement>;
 
-export function IconPicker ({
-                         icon,
-                         size = 18,
-                         width,
-                         height,
-                         className = "",
-                         strokeWidth =1 ,
-                         ...rest
-                     }: IconProps) {
-    const path = iconsList[icon];
+export function IconPicker({
+                               icon,
+                               size = 18,
+                               width,
+                               height,
+                               className = "",
+                               strokeWidth = 1,
+                               ...rest
+                           }: IconProps) {
+    const path = iconsList[icon as IconName] ?? iconsList['star'];
     if (!path) return null;
 
     return (
@@ -36,7 +36,7 @@ export function IconPicker ({
             strokeLinecap="round"
             strokeLinejoin="round"
             className={className}
-            dangerouslySetInnerHTML={{ __html: path }}
+            dangerouslySetInnerHTML={{__html: path}}
             {...rest}
         />
     );

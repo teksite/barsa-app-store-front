@@ -7,7 +7,7 @@ interface RequirementProps {
 }
 
 export function Requirement({items = [], icon = "gears", title = "نیازمندی‌ها"}: RequirementProps) {
-    if (!items.length) return null;
+    if (!items?.length) return null;
     return (
         <div className="w-11/12 md:w-1/2 bg-white rounded-lg p-6 mt-6">
             <div className="flex items-center gap-3 mb-6">

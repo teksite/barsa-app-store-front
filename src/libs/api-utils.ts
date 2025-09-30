@@ -12,7 +12,7 @@ export const fetchApi = async(url: string) => {
             }
         }
         const data = await res.json();
-        return data?.data;
+        return {data:data?.data , pagination:data?.pagination};
     } catch (error) {
         console.error('Fetch API error:', error);
         throw error;

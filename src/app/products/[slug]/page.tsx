@@ -10,7 +10,7 @@ import {Demo} from "@/app/products/[slug]/components/demo";
 
 export default async function SingleProductPage({params}: { params: { slug: string } }) {
     const {slug} = await params;
-    const product: ProductType = await fetchApi(`http://app-store.test/api/v1/products/${slug}`);
+    const {data:product}:{data: ProductType} = await fetchApi(`http://app-store.test/api/v1/products/${slug}`);
     if (!product) return notFound();
 
     return (
