@@ -4,6 +4,8 @@ import {notFound} from "next/navigation";
 import {Hero} from "@/app/products/[slug]/components/hero";
 import {Box} from "@/app/components/Box";
 import {VersionsList} from "@/app/products/[slug]/versions/components/version-list";
+import Link from "next/link";
+import {IconPicker} from "@/app/components/icon";
 
 export default async function VersionsPage({params}: { params: { slug: string } }) {
     const {slug} = await params;
@@ -15,6 +17,13 @@ export default async function VersionsPage({params}: { params: { slug: string } 
         <>
             <Hero product={product}/>
             <main className="inner-container">
+                <div className="flex items-center justify-end">
+                    <Link href={`/products/${slug}`}
+                          className="text-main_color text-sm font-bold flex items-center gap-1 mb-6" >
+                        <IconPicker icon={'arrow-left'}/>
+                        برگشت
+                    </Link>
+                </div>
                 <VersionsList slug={slug} initialItems={versions}/>
             </main>
 
