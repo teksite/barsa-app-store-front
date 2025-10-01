@@ -1,11 +1,10 @@
 'use client'
 
 import {useState, useEffect} from "react";
-import { GroupWithPropertyType, PropertyType, ProductBase } from "@/contracts/product";
-import { Box } from "@/app/components/Box";
+import {GroupWithPropertyType, PropertyType, ProductBase} from "@/contracts/product";
+import {Box} from "@/app/components/Box";
 import {ListProduct} from "@/app/products/components/list-product";
 import {ProductListSkeleton} from "@/app/products/components/skeletons/product-list-skeleton";
-import {PlaceholdersAndVanishInputDemo} from "@/app/products/components/filter/search-title";
 import {IconPicker} from "@/app/components/icon";
 
 type Props = {
@@ -13,7 +12,7 @@ type Props = {
     initialProducts: ProductBase[];
 };
 
-export function FilterGroup({ groups, initialProducts }: Props) {
+export function FilterGroup({groups, initialProducts}: Props) {
     const [products, setProducts] = useState<ProductBase[]>(initialProducts);
     const [selectedProperties, setSelectedProperties] = useState<number[]>([]);
     const [search, setSearch] = useState("");
@@ -31,7 +30,6 @@ export function FilterGroup({ groups, initialProducts }: Props) {
         }, 400);
         return () => clearTimeout(handler);
     }, [selectedProperties, search, page]);
-
 
 
     const fetchProducts = async () => {
@@ -67,10 +65,14 @@ export function FilterGroup({ groups, initialProducts }: Props) {
                         placeholder="جستجو در عنوان..."
                         className="outline-none focus:outline border-none block p-2 w-full"
                         value={search}
-                        onChange={(e) => { setSearch(e.target.value); updateFilters(); }}
+                        onChange={(e) => {
+                            setSearch(e.target.value);
+                            updateFilters();
+                        }}
                     />
-                    <span className={`min-w-fit w-fit aspect-square p-1 border border-zinc-300 rounded-full ${search.length ? 'bg-slate-600 text-zinc-50': 'text-zinc-300'}`}>
-                        <IconPicker icon={'arrow-left'} />
+                    <span
+                        className={`min-w-fit w-fit aspect-square p-1 border border-zinc-300 rounded-full ${search.length ? 'bg-slate-600 text-zinc-50' : 'text-zinc-300'}`}>
+                        <IconPicker icon={'arrow-left'} width={14} height={14} strokeWidth={2}/>
                     </span>
                 </div>
 
@@ -85,21 +87,23 @@ export function FilterGroup({ groups, initialProducts }: Props) {
             </aside>
 
             <main className="md:col-span-2 lg:col-span-4">
+                <div className="flex flex-col gap-6 h-full justify-between">
 
-                {loading ? <ProductListSkeleton /> : <ListProduct products={products} />}
+                    {loading ? <ProductListSkeleton/> : <ListProduct products={products}/>}
 
-                <div className="flex justify-center space-x-2 mt-6">
-                    {[...Array(lastPage)].map((_, i) => (
-                        <button
-                            key={i + 1}
-                            className={`px-3 py-1 border rounded ${
-                                page === i + 1 ? "bg-gray-300" : ""
-                            }`}
-                            onClick={() => setPage(i + 1)}
-                        >
-                            {i + 1}
-                        </button>
-                    ))}
+                    <div className="flex justify-center space-x-2 mt-6">
+                        {[...Array(lastPage)].map((_, i) => (
+                            <button
+                                key={i + 1}
+                                className={`px-3 py-1 border rounded ${
+                                    page === i + 1 ? "bg-gray-300" : ""
+                                }`}
+                                onClick={() => setPage(i + 1)}
+                            >
+                                {i + 1}
+                            </button>
+                        ))}
+                    </div>
                 </div>
             </main>
         </div>
@@ -112,7 +116,7 @@ type GroupProps = {
     toggleProperty: (id: number) => void;
 };
 
-export function GroupWithPropertiesFilter({ group, selectedProperties, toggleProperty }: GroupProps) {
+export function GroupWithPropertiesFilter({group, selectedProperties, toggleProperty}: GroupProps) {
     return (
         <Box className='w-full'>
             <div className="h3 font-bold mb-2">{group.title}</div>
@@ -135,7 +139,7 @@ type PropertiesProps = {
     toggleProperty: (id: number) => void;
 };
 
-export function PropertiesFilter({ properties, selectedProperties, toggleProperty }: PropertiesProps) {
+export function PropertiesFilter({properties, selectedProperties, toggleProperty}: PropertiesProps) {
     return (
         <>
             {properties.map(property => (

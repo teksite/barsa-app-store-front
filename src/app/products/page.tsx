@@ -4,7 +4,7 @@ import {FilterGroup} from "@/app/products/components/filter-group";
 import {ListProduct} from "@/app/products/components/list-product";
 
 export default async function ProductsPage() {
-    // داده‌های اولیه از سرور بگیر
+
     const {data: products}: { data: ProductBase[] } = await fetchApi(
         `http://app-store.test/api/v1/products`
     );
