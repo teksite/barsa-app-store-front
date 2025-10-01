@@ -1,6 +1,6 @@
 export default function AboutPage() {
     return (
-        <>
+        <main className='inner-container py-12'>
             <h1>
                 درباره برسا استور
             </h1>
@@ -29,6 +29,6 @@ export default function AboutPage() {
             <p>
                 از تمامی شرکت‌ها و افرادی که با استفاده از سیستم‌ساز برسا نرم‌افزاری تولید کرده‌اند، دعوت می‌شود جهت معرفی محصول خود در این وب‌سایت اقدام نمایند.
             </p>
-        </>
+        </main>
     );
 }

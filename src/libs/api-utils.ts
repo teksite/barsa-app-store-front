@@ -1,11 +1,11 @@
 import {notFound} from 'next/navigation';
 
-export const fetchApi = async (url: string, notFound: boolean = true) => {
+export const fetchApi = async (url: string, notFoundRedirect: boolean = true) => {
     try {
         const res = await fetch(url);
         if (!res.ok) {
             if (res.status === 404) {
-                if (notFound) {
+                if (notFoundRedirect) {
                     notFound();
                 } else {
                     throw new Error(`not found`);

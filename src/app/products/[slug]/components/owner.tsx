@@ -22,12 +22,12 @@ export function Owner({owner}: { owner: OwnerType }) {
 
     return (
         <Box>
-            <h3 className="mb-0">
+            <h3 className="mb-0 ">
                 {'توسعه دهنده'}
             </h3>
             <hr className="border-zinc-300 my-3"/>
             <nav>
-                <ul className="space-y-2">
+                <ul className="space-y-1">
                     <li>
                         <div className="flex items-center justify-between w-full link gap-6">
                             <div className="flex items-center gap-3">
@@ -42,12 +42,12 @@ export function Owner({owner}: { owner: OwnerType }) {
 
                     {/* Contact Details */}
                     {filteredItems.map(({key, icon, label, prefix}) => (
-                        <li key={key}>
+                        <li key={key} className="p-1 hover:bg-blue-100 rounded">
                             <Link
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 href={prefix + owner[key]}
-                                className="flex items-center justify-between w-full link gap-6"
+                                className="flex items-center justify-between w-full link gap-6 text-main_color"
                             >
                                 <div className="flex items-center gap-3">
                                     <IconPicker icon={icon}/>
