@@ -2,6 +2,15 @@ import {ContactsInfo, ContactsInfoType} from "@/shared/data";
 import Link from "next/link";
 import {IconPicker} from "@/app/components/icon";
 import {Box} from "@/app/components/Box";
+import type {Metadata} from "next";
+
+export async function generateMetadata():Promise<Metadata>{
+    return {
+        title: "تماس با برسا هاب - برسا نوین رای",
+        description: "در این صفحه راه های ارتباطی با برسا نوین رای و پتلفرم برسا هاب را میتوانید مشاهده نمایید.",
+    }
+}
+
 
 export default function ContactPage() {
 

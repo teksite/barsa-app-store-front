@@ -1,4 +1,4 @@
-import {fetchApi} from "@/libs";
+import {fetchApi} from "@/lib";
 import {ProductBase, GroupWithPropertyType} from "@/contracts/product";
 import {FilterGroup} from "@/app/products/components/filter-group";
 import {ListProduct} from "@/app/products/components/list-product";

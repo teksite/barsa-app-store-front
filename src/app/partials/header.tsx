@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { buildTree, fetchApi } from "@/libs";
+import { buildTree, fetchApi } from "@/lib";
 import { MenuItemType, TreeMenuType } from "@/contracts/menu";
 
 export async function Header() {

@@ -1,5 +1,5 @@
 import {ProductType, VersionType} from "@/contracts/product";
-import {fetchApi} from "@/libs";
+import {fetchApi} from "@/lib";
 import {notFound} from "next/navigation";
 import {Hero} from "@/app/products/[slug]/components/hero";
 import {Box} from "@/app/components/Box";

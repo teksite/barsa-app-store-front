@@ -1,4 +1,4 @@
-import {fetchApi} from "@/libs";
+import {fetchApi} from "@/lib";
 import {Hero} from "@/app/products/[slug]/components/hero";
 import {ProductType} from "@/contracts/product";
 import {notFound} from "next/navigation";
