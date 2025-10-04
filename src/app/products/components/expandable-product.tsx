@@ -5,6 +5,7 @@ import {ProductBase} from "@/contracts/product";
 import Image from "next/image";
 import {RecommendationProduct} from "@/app/products/[slug]/components/recommendation";
 import Link from "next/link";
+import {SafeImage} from "@/components/safe-Image";
 
 interface ProductCardProps {
     product: ProductBase;
@@ -23,8 +24,11 @@ export function ProductCard({product, layoutIdPrefix, onClick}: ProductCardProps
                     <div className="flex products-start justify-between gap-3 items-start mb-6">
                         <motion.div layoutId={`image-${product.title}-${layoutIdPrefix}`}>
                             {product.featured_image &&
-                                <Image width={100} height={100} loading='lazy' fetchPriority='low' decoding='async'
-                                       src={product.featured_image} alt={product.title} className="rounded-lg"/>}
+                                <SafeImage src={product.featured_image} alt={product.title}
+                                                                        className="rounded-lg" decoding="async"
+                                                                        fetchPriority="low"
+                                                                        loading="lazy" width="100" height="100"/>
+                            }
 
                         </motion.div>
                         <motion.div className={'justify-self-end'}

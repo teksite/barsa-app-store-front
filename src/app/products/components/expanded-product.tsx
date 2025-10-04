@@ -7,6 +7,7 @@ import {useOutsideClick} from "@/hooks/use-outside-click";
 import Image from "next/image";
 import {RecommendationProduct} from "@/app/products/[slug]/components/recommendation";
 import Link from "next/link";
+import {SafeImage} from "@/components/safe-Image";
 
 interface ProductModalProps {
     product: ProductBase | null;
@@ -36,10 +37,10 @@ export function ProductModal({product, layoutIdPrefix, onClose}: ProductModalPro
                                 <div className='flex items-start gap-6 justify-start mb-6'>
                                     {product.featured_image &&
                                         <motion.div layoutId={`image-${product.title}-${layoutIdPrefix}`}>
-                                            <Image width={100} height={100} loading='lazy' fetchPriority='low'
-                                                   decoding='async'
-                                                   src={product.featured_image} alt={product.title}
-                                                   className="rounded-lg"/>
+                                            <SafeImage src={product.featured_image} alt={product.title}
+                                                       className="rounded-lg" decoding="async"
+                                                       fetchPriority="low"
+                                                       loading="lazy" width="100" height="100"/>
                                         </motion.div>
                                     }
                                     <div className="py-3">

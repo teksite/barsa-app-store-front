@@ -3,12 +3,12 @@
 import { useEffect, useRef, useState } from "react";
 import ColorThief from "colorthief";
 
-import Image from "next/image";
 import Link from "next/link";
 import { ProductType } from "@/contracts/product";
 import { RecommendationProduct } from "@/app/products/[slug]/components/recommendation";
 import { Properties } from "@/app/products/[slug]/components/properties";
 import { IconPicker } from "@/components/icon";
+import {SafeImage} from "@/components/safe-Image";
 
 export function Hero({ product }: { product: ProductType }) {
     const [bg, setBg] = useState("");
@@ -54,15 +54,10 @@ export function Hero({ product }: { product: ProductType }) {
                     />
 
                     {/* Visible Product Image */}
-                    <Image
-                        src={product.featured_image ?? ""}
-                        alt={product.title}
-                        width={100}
-                        height={100}
-                        priority
-                        className="rounded-xl"
-                    />
-
+                    <SafeImage src={product.featured_image} alt={product.title}
+                               className="rounded-lg" decoding="async"
+                                priority
+                                width="100" height="100"/>
                     <figcaption className="flex flex-col gap-3 justify-center">
                         <h1 className="mb-0">{product?.title}</h1>
 
