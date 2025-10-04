@@ -1,7 +1,7 @@
 "use client";
 
 import {useState} from "react";
-import {Box} from "@/app/components/Box";
+import {Box} from "@/components/Box";
 import {Button} from "@/components/ui/stateful-button";
 import {VersionType} from "@/contracts/product";
 

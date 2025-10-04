@@ -3,7 +3,6 @@ export function HtmlContent({ html }: { html: string }) {
 }
 
 
-
 export function buildTree<T extends Record<string, any>>(
     items: T[],
     idKey: keyof T = "id",
@@ -28,3 +27,5 @@ export function buildTree<T extends Record<string, any>>(
 
     return rootItems;
 }
+
+

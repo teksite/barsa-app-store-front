@@ -1,7 +1,7 @@
-import {IconPicker} from "@/app/components/icon";
+import {IconPicker} from "@/components/icon";
 import {OwnerType} from "@/contracts/product";
 import Link from "next/link";
-import {Box} from "@/app/components/Box";
+import {Box} from "@/components/Box";
 
 
 type ContactKey = 'telephone' | 'phone' | 'email' | 'url';

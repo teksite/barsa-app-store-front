@@ -11,12 +11,17 @@ export async function generateMetadata():Promise<Metadata>{
 
 export default function AboutPage() {
     return (
-        <main className='inner-container py-12'>
-            <Image src={'/storage/logo/logo-100x75.png'} alt=' درباره برسا استور' priority width={100} height={75}/>
-            <h1>
-                برسا هاب
-            </h1>
-            <section className='mb-6'>
+        <main className='inner-container my-12'>
+
+            <section className='mb-12'>
+                <figure>
+                    <Image src={'/storage/logo/logo-100x75.png'} alt=' درباره برسا استور' priority width={100} height={75}/>
+                    <figcaption>
+                        <h1>
+                            برسا هاب
+                        </h1>
+                    </figcaption>
+                </figure>
                 <h2>
                     درباره برسا نوین‌رای
                 </h2>
@@ -34,7 +39,7 @@ export default function AboutPage() {
                 </p>
             </section>
 
-            <section className='mb-6'>
+            <section className='mb-12'>
                 <h3>
                     معرفی وب‌سایت محصولات ساخته‌شده با برسا
                 </h3>

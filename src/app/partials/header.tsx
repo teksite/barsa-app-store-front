@@ -43,7 +43,7 @@ export async function getCachedMenu(label: string): Promise<TreeMenuType[]> {
         return menuCache.get(label)!;
     }
 
-    const { data: menu }: { data: MenuItemType[] } = await fetchApi(`http://app-store.test/api/v1/menus/${label}`);
+    const { data: menu }: { data: MenuItemType[] } = await fetchApi(`http://app-store.test/api/v1/menus/${label}` ,false);
     const menuItems = buildTree(menu);
 
     menuCache.set(label, menuItems);

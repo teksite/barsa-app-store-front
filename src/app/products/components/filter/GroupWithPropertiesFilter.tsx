@@ -1,4 +1,4 @@
-import { Box } from "@/app/components/Box";
+import { Box } from "@/components/Box";
 import { GroupWithPropertyType } from "@/contracts/product";
 import {PropertiesFilter} from "@/app/products/components/filter-group";
 

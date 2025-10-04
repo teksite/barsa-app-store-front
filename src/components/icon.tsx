@@ -1,6 +1,6 @@
 // Icon.tsx
 
-import {IconName, iconsList} from "@/app/components/iconList";
+import {IconName, iconsList} from "@/components/iconList";
 
 type IconProps = {
     icon: string;

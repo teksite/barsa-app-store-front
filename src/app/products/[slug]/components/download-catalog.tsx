@@ -1,4 +1,4 @@
-import {IconPicker} from "@/app/components/icon";
+import {IconPicker} from "@/components/icon";
 import Link from "next/link";
 
 export function DownloadCatalog({url, title, icon = 'cloud-arrow'}: { url?: string, title?: string, icon?: string }) {

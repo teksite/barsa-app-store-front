@@ -1,4 +1,4 @@
-import {IconPicker} from "@/app/components/icon";
+import {IconPicker} from "@/components/icon";
 
 type RecommendationType = 1 | 2 | 3;
 

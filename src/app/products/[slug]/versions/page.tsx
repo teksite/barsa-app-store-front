@@ -2,10 +2,10 @@ import {ProductType, VersionType} from "@/contracts/product";
 import {fetchApi} from "@/lib";
 import {notFound} from "next/navigation";
 import {Hero} from "@/app/products/[slug]/components/hero";
-import {Box} from "@/app/components/Box";
+import {Box} from "@/components/Box";
 import {VersionsList} from "@/app/products/[slug]/versions/components/version-list";
 import Link from "next/link";
-import {IconPicker} from "@/app/components/icon";
+import {IconPicker} from "@/components/icon";
 
 export default async function VersionsPage({params}: { params: { slug: string } }) {
     const {slug} = await params;

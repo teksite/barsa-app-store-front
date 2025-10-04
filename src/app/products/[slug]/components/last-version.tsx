@@ -1,7 +1,7 @@
-import {IconPicker} from "@/app/components/icon";
+import {IconPicker} from "@/components/icon";
 import {VersionType} from "@/contracts/product";
 import Link from "next/link";
-import {Box} from "@/app/components/Box";
+import {Box} from "@/components/Box";
 
 export function LastVersion({version, link}: { version?: VersionType, link?: string }) {
     if (!version) return null;

@@ -2,10 +2,10 @@
 
 import {useState, useEffect} from "react";
 import {GroupWithPropertyType, PropertyType, ProductBase} from "@/contracts/product";
-import {Box} from "@/app/components/Box";
+import {Box} from "@/components/Box";
 import {ListProduct} from "@/app/products/components/list-product";
 import {ProductListSkeleton} from "@/app/products/components/skeletons/product-list-skeleton";
-import {IconPicker} from "@/app/components/icon";
+import {IconPicker} from "@/components/icon";
 
 type Props = {
     groups: GroupWithPropertyType[];

@@ -1,5 +1,5 @@
 'use client'
-import {IconPicker} from "@/app/components/icon";
+import {IconPicker} from "@/components/icon";
 
 ;
 import Link from "next/link";

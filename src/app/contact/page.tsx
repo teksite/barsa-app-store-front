@@ -1,7 +1,7 @@
 import {ContactsInfo, ContactsInfoType} from "@/shared/data";
 import Link from "next/link";
-import {IconPicker} from "@/app/components/icon";
-import {Box} from "@/app/components/Box";
+import {IconPicker} from "@/components/icon";
+import {Box} from "@/components/Box";
 import type {Metadata} from "next";
 
 export async function generateMetadata():Promise<Metadata>{
@@ -15,8 +15,8 @@ export async function generateMetadata():Promise<Metadata>{
 export default function ContactPage() {
 
     return (
-        <main id="page-content" className="contact-page" role="main" aria-labelledby="contact-heading">
-            <div className=" my-12  inner-container">
+        <main id="page-content" className="contact-page py-12" role="main" aria-labelledby="contact-heading">
+            <div className="inner-container">
                 <section id="contact-heading" className="items-center grid lg:grid-cols-2 gap-12">
                     <div className="bg-no-repeat bg-cover h-full bg-theme-1 p-6">
                         <h1>

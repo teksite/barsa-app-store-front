@@ -1,4 +1,4 @@
-import { IconPicker } from "@/app/components/icon";
+import { IconPicker } from "@/components/icon";
 
 interface RequirementProps {
     items?: string[];
